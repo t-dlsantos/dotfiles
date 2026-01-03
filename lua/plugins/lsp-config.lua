@@ -15,7 +15,7 @@ return {
     "mason-org/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "stylua" }
+        ensure_installed = { "lua_ls", "stylua", "jsonls" }
       })
     end
   },
