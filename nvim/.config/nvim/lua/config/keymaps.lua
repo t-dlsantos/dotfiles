@@ -5,3 +5,5 @@ vim.cmd("set shiftwidth=2")
 
 vim.cmd("set relativenumber")
 vim.opt.number = true
+
+vim.keymap.set("i", "<C-h>", "<C-w>", { noremap = true })
