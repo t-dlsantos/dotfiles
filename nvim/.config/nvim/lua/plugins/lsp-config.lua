@@ -15,7 +15,7 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "stylua", "jsonls", "ruff", "pyright" },
+				ensure_installed = { "lua_ls", "stylua", "jsonls", "ruff", "pyright", "ts_ls"},
 			})
 		end,
 	},
@@ -39,7 +39,6 @@ return {
 			end
 
 			vim.lsp.config("pyright", {
-
 				capabilities = capabilities,
 
 				settings = {
