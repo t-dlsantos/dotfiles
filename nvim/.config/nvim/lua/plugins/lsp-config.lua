@@ -1,7 +1,11 @@
 return {
 	{
 		"mason-org/mason.nvim",
-		opts = {},
+		opts = {
+      ensure_installed = {
+        "netcoredbg"
+      }
+    },
 		config = function()
 			require("mason").setup({
 				registries = {
