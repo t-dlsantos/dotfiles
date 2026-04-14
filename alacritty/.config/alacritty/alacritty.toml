@@ -1,0 +1,13 @@
+import = [
+    "~/.config/alacritty/themes/themes/tokyo_night.toml"
+]
+
+[window]
+startup_mode = "Maximized"
+decorations = "None"
+padding = { x = 0, y = 0 }
+dynamic_title = false
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+size = 9
