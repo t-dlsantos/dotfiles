@@ -32,26 +32,6 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
       vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP references" })
-
-			local function get_python_path()
-				local venv_python = vim.fn.getcwd() .. "/.venv/bin/python"
-
-				if vim.fn.executable(venv_python) == 1 then
-					return venv_python
-				end
-
-				return vim.fn.exepath("python")
-			end
-
-			vim.lsp.config("pyright", {
-				capabilities = capabilities,
-
-				settings = {
-					python = {
-						pythonPath = get_python_path()
-					},
-				},
-			})
 		end,
 	},
 }
