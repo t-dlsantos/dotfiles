@@ -17,6 +17,15 @@ return {
 					name = "cs",
 				},
 			})
+
+      require('neo-tree').setup({
+        filesystem = {
+          follow_current_file = {
+            enabled = true
+          },
+          use_libuv_file_watcher = true
+        }
+      })
 			vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle left<CR>", {})
 			vim.keymap.set("n", "<leader>ç", ":Neotree filesystem focus left<CR>", {})
 		end,
