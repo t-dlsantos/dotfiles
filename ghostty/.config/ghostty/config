@@ -1,7 +1,8 @@
 # font
 font-family = JetBrainsMono Nerd Font
 font-size = 9
-adjust-cell-height = 6
+
+window-decoration = none
 
 # theme
 theme = TokyoNight Night

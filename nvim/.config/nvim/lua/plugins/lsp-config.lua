@@ -2,10 +2,10 @@ return {
 	{
 		"mason-org/mason.nvim",
 		opts = {
-      ensure_installed = {
-        "netcoredbg"
-      }
-    },
+			ensure_installed = {
+				"netcoredbg",
+			},
+		},
 		config = function()
 			require("mason").setup({
 				registries = {
@@ -26,12 +26,24 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+			vim.lsp.config("*", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.enable({
+				"lua_ls",
+				"jsonls",
+				"ruff",
+				"pyright",
+				"ts_ls",
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-      vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP references" })
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP references" })
 		end,
 	},
 }
