@@ -19,7 +19,7 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "stylua", "jsonls", "ruff", "pyright", "ts_ls"},
+				ensure_installed = { "lua_ls", "stylua", "jsonls", "ruff", "pyright", "ts_ls" },
 			})
 		end,
 	},
@@ -30,6 +30,26 @@ return {
 
 			vim.lsp.config("*", {
 				capabilities = capabilities,
+			})
+
+			vim.lsp.config("lua_ls", {
+				settings = {
+					Lua = {
+						runtime = {
+							version = "LuaJIT",
+						},
+						workspace = {
+							checkThirdParty = false,
+							library = {
+								"${3rd}/luv/library",
+								unpack(vim.api.nvim_get_runtime_file("", true)),
+							},
+						},
+						completion = {
+							callSnippet = "Replace",
+						},
+					},
+				},
 			})
 
 			vim.lsp.enable({
