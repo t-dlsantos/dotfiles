@@ -18,14 +18,25 @@ return {
 				},
 			})
 
-      require('neo-tree').setup({
-        filesystem = {
-          follow_current_file = {
-            enabled = true
-          },
-          use_libuv_file_watcher = true
-        }
-      })
+			require("neo-tree").setup({
+				default_component_configs = {
+					icon = {
+						folder_closed = "",
+						folder_open = "",
+						folder_empty = "",
+						folder_empty_open = "",
+						default = "",
+					},
+				},
+
+				filesystem = {
+					follow_current_file = {
+						enabled = true,
+					},
+					use_libuv_file_watcher = true,
+				},
+			})
+
 			vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle left<CR>", {})
 			vim.keymap.set("n", "<leader>ç", ":Neotree filesystem focus left<CR>", {})
 		end,
