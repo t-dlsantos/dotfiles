@@ -11,3 +11,9 @@ vim.opt.number = true
 
 -- vim.keymap.set("i", "<C-h>", "<C-w>", { noremap = true })
 vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "delete whole word" })
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+vim.keymap.set("x", ">", ">gv", { desc = "Indent Right" })
+vim.keymap.set("x", "<", "<gv", { desc = "Indent Left" })

@@ -19,16 +19,12 @@ return {
 			})
 
 			require("neo-tree").setup({
-				default_component_configs = {
-					icon = {
-						folder_closed = "",
-						folder_open = "",
-						folder_empty = "",
-						folder_empty_open = "",
-						default = "",
-					},
+				indent = {
+					with_markers = true,
+					indent_marker = "▏",
+                    last_indent_marker = "╰",
+					with_expanders = false,
 				},
-
 				filesystem = {
 					follow_current_file = {
 						enabled = true,
